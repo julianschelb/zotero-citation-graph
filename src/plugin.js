@@ -444,7 +444,7 @@ var CitationGraph = {
 
 	scopeForSelection() {
 		let zp = Zotero.getActiveZoteroPane();
-		let coll = zp.getSelectedCollection();
+		let coll = zp.getSelectedCollections ? zp.getSelectedCollections()[0] : zp.getSelectedCollection();
 		if (coll) return { type: "collection", id: coll.id };
 		return { type: "library", libraryID: zp.getSelectedLibraryID() };
 	},
